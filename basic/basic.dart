@@ -6,6 +6,8 @@ void main() {
   viewLists();
   viewSets();
   viewMaps();
+  viewFinalConst();
+  viewComments();
 }
 
 void msgHello() {
@@ -22,13 +24,13 @@ void dataTypes() {
   print(c);
 
   int _a = 30;
-  double $b = 40.5; 
+  double $b = 40.5;
   print(_a+$b);
   var ab$cd = 10;
   print(ab$cd);
   var _ = 10;
   print(_);
-  // Invalid 
+  // Invalid
   //var _$$_# = 10;
   //print(_$$_#);
 }
@@ -41,7 +43,7 @@ void viewString() {
 
   String name3 = "O'conor";
   String name4 = '''
-    Hola mundo desde 
+    Hola mundo desde
     $name
     multilinea  con Ap'asdad
   ''';
@@ -90,7 +92,7 @@ void viewMaps() {
   };
   print(ironman);
   print(ironman['nivel']);
-  
+
   Map<int, dynamic> ironmanTwo = {
     1 : 'Tony Stark',
     2: 'Dinero' ,
@@ -115,4 +117,42 @@ void viewMaps() {
     9:10
   };
   print(tabla[10]);
+}
+
+void viewFinalConst() {
+  var a = 10;
+  final b = 10;
+  const c = 10;
+
+  a = 20;
+  print(a);
+  //b = 20; // not set variable
+  //c = 30; // not set variable
+  final personFinal = ['Pedro', 'Juan', 'Emilio'];
+  const personConst = ['Pedro', 'Juan', 'Emilio']; // Lista que no se va a modificar
+
+  personFinal.add('Carlos');
+  //personConst.add('Camilo');
+  print(personFinal);
+  print(personConst);
+
+  late final double x;
+  x = 10;
+  print(x);
+}
+
+void viewComments() {
+  // Esto es un comentario
+  int a =1; // a es un entero
+  print(a); //impresion
+
+  /**
+   * Comentario multilinea
+   * -----------
+   * -----------
+   */
+   /// Documentar con DartDoc
+   /// [name] name user
+   /// [lastname] lastname user
+
 }
